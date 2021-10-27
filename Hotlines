@@ -1,0 +1,27 @@
+def hotline():
+    #Hotline numbers can be accessed through the homepage. If the user is in need of a hotline number,
+    #then the user can click on the hotline box
+    #The user will then get a list of the same hotline numbers that are listed in the SRS paper.
+
+    #Start of Code:
+    #List of hotline numbers from the SRS Paper
+    print("www.suicidepreventionlifeline.org")
+    print("24/7 Crisis Hotline: National Suicide Prevention Lifeline Network (1-800-237-TALK (8255) - Veterans press 1)")
+    print("Crisis Text Line (text “TALK” to 741-741)")
+    print("Veterans Crisis Line (text to 838255)")
+    print("Vets4Warriors (1-855-838-8255)")
+    print("SAMHSA Treatment Referral Hotline (Substance Abuse - 1-800-662-HELP (4357))")
+    print("RAINN National Sexual Assault Hotline (1-800-656-HOPE (4673))")
+    print("National Teen Dating Abuse Helpline (1-866-331-9474)")
+    print("The Trevor Project (1-866-488-7386 or text “START” to 678678)")
+    print("Trans Lifeline (877-565-8860 for US and 877-330-6366 for Canada)")
+    print("National Domestic Violence Hotline (call 1-800-799-7233 or log onto thehotline.org or text “LOVEIS” to 22522)")
+    print("StrongHearts Native Helpline (call 1-844-762-8483)\n")
+    
+    #User has option to go back to the homepage
+    print("Press 1 to go back to the homepage!")
+    choice = getChoice()
+    if choice == 1:
+        homePage()
+    else:
+        invalidInput()
