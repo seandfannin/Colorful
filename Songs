@@ -1,0 +1,95 @@
+def songs():
+    #Songs is one of the avaliable rewards. If the user wishes to have an uplighting song to brighten their day,
+    #The software will provide a random song from a list with at least 10 different songs.
+
+    #Start of Code:
+    #Picks a random uplighting song numbered 1-17
+    compSong = random.randint(1,17)
+    
+    #Song options
+    #Links to songs?
+    if compSong == 1:
+        print("Dynamite by BTS")
+        print("Time: 3:19")
+        print("Genre: K-Pop\n")
+    elif compSong == 2:
+        print("People Help the People by Birdy")
+        print("Time: 4:17")
+        print("Genre: Alternative\n")
+    elif compSong == 3:
+        print("Something Wild (feat. Andrew McHanon in the Wilderness) by Lindsey Stirling")
+        print("Time: 3:45")
+        print("Genre: Dance\n")
+    elif compSong == 4:
+        print("Permission to Dance by BTS")
+        print("Time: 3:08")
+        print("Genre: K-Pop\n")
+    elif compSong == 5:
+        print("Fight Song by Rachel Platten")
+        print("Time: 3:24")
+        print("Genre: Pop\n")
+    elif compSong == 6:
+        print("All Star by Smash Mouth")
+        print("Time: 3:20")
+        print("Genre: Alternative\n")
+    elif compSong == 7:
+        print("Believer by Imagine Dragons")
+        print("Time: 3:24")
+        print("Genre: Alternative\n")
+    elif compSong == 8:
+        print("If I Ruled the World (feat. Iyaz) by Big Time Rush")
+        print("Time: 3:00")
+        print("Genre: Pop\n")
+    elif compSong == 9:
+        print("Here I Am (End Title) by Brian Adams")
+        print("Time: 4:45")
+        print("Genre: Soundtrack\n")
+    elif compSong == 10:
+        print("The Middle by Jimmy Eat World")
+        print("Time: 2:53")
+        print("Genre: Alternative\n")
+    elif compSong == 11:
+        print("Classic by MKTO")
+        print("Time: 2:53")
+        print("Genre: \n")
+    elif compSong == 12:
+        print("Rocketeer by Far East Movement & Ryan Tedder")
+        print("Time: 3:30")
+        print("Genre: \n")
+    elif compSong == 13:
+        print("Dance Again (feat. Pitbull) by Jennifer Lopez")
+        print("Time: 3:46")
+        print("Genre: \n")
+    elif compSong == 14:
+        print("Alone Togeter by Fall Out Boy")
+        print("Time: 3:21")
+        print("Genre: Alternative\n")
+    elif compSong == 15:
+        print("Good Times by All Time Low")
+        print("Time: 3:44")
+        print("Genre: \n")
+    elif compSong == 16:
+        print("Dear Maria, Count Me In by All Time Low")
+        print("Time: 3:01")
+        print("Genre: \n")
+    elif compSong == 17:
+        print("The Feels by TWICE")
+        print("Time: 3:52")
+        print("Genre: K-Pop\n")
+    else:
+        return "error"
+    
+    #Printing random song
+    #print(compSong)
+    
+    #User has option to go back to the homepage or another song
+    print("Press 1 to go back to the homepage!")
+    print("Press 2 to get another song!")
+    choice = getChoice()
+    if choice == 1:
+        homePage()
+    elif choice == 2:
+        songs()
+    else:
+        invalidInput()
+        
