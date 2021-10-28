@@ -1,0 +1,67 @@
+import random #random generator
+
+def rewards():
+    #Rewards is a "glue" type of function that will have the ability to call each of the rewards available.
+    #The indiividual rewards are accessable on the homepage as well as after the user logs about their emotions
+
+    #Start of Code:
+    print("Congratulations on completing your log!!!")
+    print("Would you like a reward?")
+    print("Type Y for yes!")
+    print("Type N for no!\n")
+    
+    #Yes or no choice of user
+    choice = getYN()
+    if choice == "N":
+        print("Have a nice day!")
+    elif choice == "Y":
+        homePage()
+    else:
+        while choice != "N" or choice != "Y":
+            print("Invalid Choice!")
+            print("Would you like a reward?")
+            print("Type Y for yes!")
+            print("Type N for no!\n")
+        
+            choice = getYN()
+            if choice == "N":
+                print("Have a nice day!")
+            elif choice == "Y":
+                homePage()
+
+#Getting choice of user, not integer, Finished
+def getYN():
+    return input("Enter your choice: ").upper()
+
+#Getting choice of user, Finished
+def getChoice():
+    return int(input("Enter your choice: "))
+
+#Invalid Input, loop to choice again?
+def invalidInput():
+    print("That is not a valid input. Returning to the Homepage!\n")
+    homePage()
+
+#Temperary Homepage
+def homePage():
+    print("WELCOME TO COLORFUL!")
+    print("Where would you like to go?\n")
+    print("1 for a list of hotlines.")
+    print("2 for an inspriational quote.")
+    print("3 for a funny video.")
+    print("4 for a song.")
+    print("5 for a meme or joke.")
+    
+    choice = getChoice()
+    if choice == 1:
+        hotline()
+    elif choice == 2:
+        quotes()
+    elif choice == 3:
+        videos()
+    elif choice == 4:
+        songs()
+    elif choice == 5:
+        memeJoke()
+    else:
+        invalidInput()
