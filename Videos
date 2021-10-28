@@ -1,0 +1,59 @@
+def videos():
+    #Videos is one of the avaliable rewards. If the user wishes to have a funny
+        #video to brighten their day,
+    #The software will provide a random video from a list with at least 10 different videos.
+
+    #Start of Code:
+    #Picks a random funny video numbered 1-13
+    compVideo = random.randint(1,13)
+    
+    #Instruction to use videos
+    print("Here is the 'how to' view the videos!")
+    print("When you get your video rewards, open up a web browser!")
+    print("Then, copy and paste the link provided into the search bar!")
+    print("After that, press Enter and enjoy the reward!\n")
+    
+    #Video options
+    if compVideo == 1:
+        print("Parkour Panda: https://vm.tiktok.com/ZM8jq3hsN/")
+    elif compVideo == 2:
+        print("Pep-Talk 1: https://vm.tiktok.com/ZM8jqgsWN/")
+    elif compVideo == 3:
+        print("Tiny Puppy Bark: https://vm.tiktok.com/ZM8jqbnG1/")
+    elif compVideo == 4:
+        print("Pep-Talk 2: https://vm.tiktok.com/ZM8jqtXB9/")
+    elif compVideo == 5:
+        print("Pep-Talk 3: https://vm.tiktok.com/ZM8jqcLvq/")
+    elif compVideo == 6:
+        print("Movie Intro: https://vm.tiktok.com/ZM8jbdpco/")
+    elif compVideo == 7:
+        print("Super Mario Cat: https://vm.tiktok.com/ZM8jqpQ9b/")
+    elif compVideo == 8:
+        print("Goat: https://vm.tiktok.com/ZM8jqp4B9/")
+    elif compVideo == 9:
+        print("Funny Car Noise: https://vm.tiktok.com/ZM8jqbPVe/")
+    elif compVideo == 10:
+        print("Cat VS Bean bag: https://vm.tiktok.com/ZM8jqE6YT/")
+    elif compVideo == 11:
+        print("Fluffy Dog: https://vm.tiktok.com/ZM8jqg8MN/")
+    elif compVideo == 12:
+        print("Horse Mask: https://vm.tiktok.com/ZM8jbd75U/")
+    elif compVideo == 13:
+        print("Dog is on the way: https://vm.tiktok.com/ZM8jqoUGv/")
+    else:
+        return "error"
+    
+    #Printing random video
+    #print(compVideo)
+        
+    #User has option to go back to the homepage or another video
+    print("Press 1 to go back to the homepage!")
+    print("Press 2 to get another video!")
+    choice = getChoice()
+    if choice == 1:
+        homePage()
+    elif choice == 2:
+        videos()
+    else:
+        invalidInput()
+        
