@@ -1,0 +1,46 @@
+def quotes():
+    #Quotes is one of the avaliable rewards. If the user wishes to have an inspirational quote to brighten their day,
+    #The the software will provide a random quote from a list with at least 10 different quotes.
+
+    #Start of Code:
+    #Picks a random inspirational quote numbered 1-10
+    compQuote = random.randint(1,10)
+    
+    #Quote options
+    if compQuote == 1:
+        print("Believe you can and you're already halfway there. -Theodore Roosevelt\n")
+    elif compQuote == 2:
+        print("All our dreams can come true if we have the courage to pursue them. -Walt Disney\n")
+    elif compQuote == 3:
+        print("Don't worry if you're not where you want to be yet. Great things take time. -Unknown\n")
+    elif compQuote == 4:
+        print("Be thankful for what you have - you'll end up having more. -Oprah\n")
+    elif compQuote == 5:
+        print("You are the artist of your own life. Don't hand the paintbrush to anyone else. -Unknown\n")
+    elif compQuote == 6:
+        print("Strive for progress. Not perfection. - Unknown\n")
+    elif compQuote == 7:
+        print("Just believe in yourself. Even if you don't, pretend that you do and, at some point, you will. -Venus Williams\n")
+    elif compQuote == 8:
+        print("Life is like riding a bicycle. To keep your balance, you must keep moving. -Albert Einstein\n")
+    elif compQuote == 9:
+        print("Happiness is not by chance, but by choice. -Jim Rohn\n")
+    elif compQuote == 10:
+        print("You're much stronger than you think you are. Trust me. -Superman\n")
+    else:
+        return "error"
+    
+    #Printing random quote
+    #print(compQuote)
+        
+    #User has option to go back to the homepage or another quote
+    print("Press 1 to go back to the homepage!")
+    print("Press 2 to get another quote!")
+    choice = getChoice()
+    if choice == 1:
+        homePage()
+    elif choice == 2:
+        quotes()
+    else:
+        invalidInput()
+        
