@@ -1,0 +1,89 @@
+import random #random generator
+from PIL import Image #Image opener
+
+def memeJoke():
+    #memeJoke is one of the avaliable rewards. If the user wishes to have a funny joke or meme to make them smile.
+    #The software will provide a random meme or joke from a list with at least 10 different jokes and memes.
+    
+    #Start of Code:
+    #Picks a random funny meme or joke numbered 1-21
+    compMemeJoke = random.randint(1,21)
+    
+    #Meme or Joke options
+    #11 Jokes
+    if compMemeJoke == 1:
+        print("What do you call a boomerang that won't come back? -A stick!\n")
+    elif compMemeJoke == 2:
+        print("Why are piggy banks so wise? -They're filled with common cents.\n")
+    elif compMemeJoke == 3:
+        print("Why couldn't the bicycle stand up by itself? -It was two-tired.\n")
+    elif compMemeJoke == 4:
+        print("How do celebrities stay cool? -They have many fans.\n")
+    elif compMemeJoke == 5:
+        print("What did the baby corn say to the mama corn? -Where's POPcorn?\n")
+    elif compMemeJoke == 6:
+        print("Why do pancakes always win at baseball? -Because they have the best batter.\n")
+    elif compMemeJoke == 7:
+        print("Want to hear a pizza joke? -Nevermind, it's too cheesy.\n")
+    elif compMemeJoke == 8:
+        print("I ordered a chicken and an egg on Amazon. -I'll let you know.\n")
+    elif compMemeJoke == 9:
+        print("How does a penguin build it's house? -Igloos it together.\n")
+    elif compMemeJoke == 10:
+        print("What do you call a fake noodle? -Impasta!\n")
+    elif compMemeJoke == 11:
+        print("Whats the differenece between a piano, tuna, and a tube of glue?")
+        print("-You can tune a piano but you cant tune a tuna.")
+        print("Now you might be asking where the glue is?")
+        print("-You may get stuck on that.\n")
+        
+    #10 Memes
+        #In order for pictures to open, you must copy the who path to the meme pictures
+        #If not, then it will not work
+    elif compMemeJoke == 12:
+        meme12 = Image.open(r"C:\Users\brian\Pictures\CS 253 Memes\dog.JPG")
+        meme12.show()
+    elif compMemeJoke == 13:
+        meme13 = Image.open(r"C:\Users\brian\Pictures\CS 253 Memes\worth loving.jpg")
+        meme13.show()
+    elif compMemeJoke == 14:
+        meme14 = Image.open(r"C:\Users\brian\Pictures\CS 253 Memes\rat.jpg")
+        meme14.show()
+    elif compMemeJoke == 15:
+        meme15 = Image.open(r"C:\Users\brian\Pictures\CS 253 Memes\kitty crime.jpg")
+        meme15.show()
+    elif compMemeJoke == 16:
+        meme16 = Image.open(r"C:\Users\brian\Pictures\CS 253 Memes\kitty toy.jpg")
+        meme16.show()
+    elif compMemeJoke == 17:
+        meme17 = Image.open(r"C:\Users\brian\Pictures\CS 253 Memes\kakuna rattata.jpg")
+        meme17.show()
+    elif compMemeJoke == 18:
+        meme18 = Image.open(r"C:\Users\brian\Pictures\CS 253 Memes\yoda.jpg")
+        meme18.show()
+    elif compMemeJoke == 19:
+        meme19 = Image.open(r"C:\Users\brian\Pictures\CS 253 Memes\jimin.jpg")
+        meme19.show()
+    elif compMemeJoke == 20:
+        meme20 = Image.open(r"C:\Users\brian\Pictures\CS 253 Memes\taeyong.jpg")
+        meme20.show()
+    elif compMemeJoke == 21:
+        meme21 = Image.open(r"C:\Users\brian\Pictures\CS 253 Memes\yee haw.jpg")
+        meme21.show()
+    else:
+        return "error"
+    
+    #Printing random meme or joke
+    #print(compMemeJoke)
+    
+    #User has option to go back to the homepage or another song
+    print("Press 1 to go back to the homepage!")
+    print("Press 2 to get another meme or joke!")
+    choice = getChoice()
+    if choice == 1:
+        homePage()
+    elif choice == 2:
+        memeJoke()
+    else:
+        invalidInput()
+    
