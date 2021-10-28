@@ -1,3 +1,5 @@
+import random #random generator
+
 def songs():
     #Songs is one of the avaliable rewards. If the user wishes to have an uplighting song to brighten their day,
     #The software will provide a random song from a list with at least 10 different songs.
