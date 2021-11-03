@@ -1,0 +1,52 @@
+    # This is the compliments randomizer.
+    #    This randomizer gives a random compliment.
+    #    This is a two-part randomizer, based loosely on the mind of
+    #    when we would program dice randomizers.
+    
+def complimentRandomizer():
+    # This is just the randomizer. Nothing too special, moving along.
+    return random.randint(1,10)
+
+def compliments():
+    # This is where the magic happens.
+    #    The complimentRandomizer function gets called here.
+    
+    compliment = complimentRandomizer()
+    print("Daily Compliment: ")
+    
+    # Then, based on the computer randomization,
+    #    the program prints a different compliment!
+    
+    if compliment == 1:
+        print("You look stellar today!")
+        
+    elif compliment == 2:
+        print("You're incredibly smart, you can do anything you put your mind to!")
+        
+    elif compliment == 3:
+        print("You're so kind!")
+        
+    elif compliment == 4:
+        print("You light up the room!")
+        
+    elif compliment == 5:
+        print("You're someone's reason to smile!")
+        
+    elif compliment == 6:
+        print("You're an inspiration!")
+        
+    elif compliment == 7:
+        print("You're making a difference!")
+        
+    elif compliment == 8:
+        print("You are enough!")
+        
+    elif compliment == 9:
+        print("You're something really special!")
+        
+    elif compliment == 10:
+        print("You are perfect just the way you are!")
+      
+    # Fail-safe, just in case.
+    else:
+        print("Error")
