@@ -1,0 +1,88 @@
+def contacts():
+    
+    # This is just the outputFile information for recording input.
+    
+    outputFileName = "out.txt"
+    outputFile = open(outputFileName, "w", encoding="utf-8")
+    
+    # This is where contact 1 information will be input.
+    #    We will need to make contactNumbers gracefully handle
+    #    a ValueError if the user enters dashes or spaces.
+    
+    print("Please enter two contacts.")
+    print("Please use capitalization on the first letters.")
+    contactName1 = input("Contact 1 name: ")
+    contactRelation1 = input("Contact 1 relationship: ")
+    contactNumber1 = int(input("Contact 1 number: "))
+    stringNumber1 = str(contactNumber1)
+    numLength1 = len(stringNumber1)
+    
+    # This is to check and make sure that the contact number is
+    #    the right length.
+    
+    while numLength1 < 10 or numLength1 > 10:
+        print("The number must be ten digits and not include spaces or dashes.")
+        contactNumber1 = int(input("Contact 1 number: "))
+        stringNumber1 = str(contactNumber1)
+        numLength1 = len(stringNumber1)
+        
+    # This is where contact 2 information will be input.
+    #    We will need to make contactNumbers gracefully handle
+    #    a ValueError if the user enters dashes or spaces.
+    
+    contactName2 = input("Contact 2 name: ")
+    contactRelation2 = input("Contact 2 relationship: ")
+    contactNumber2 = int(input("Contact 2 number: "))
+    stringNumber2 = str(contactNumber2)
+    numLength2 = len(stringNumber2)
+    
+    # Again, making sure the number is the right length.
+    
+    while numLength2 < 10 or numLength2 > 10:
+        print("The number must be ten digits and not include spaces or dashes.")
+        contactNumber2 = int(input("Contact 2 number: "))
+        stringNumber2 = str(contactNumber2)
+        numLength2 = len(stringNumber2)
+    
+    
+    # This is to check and see if the contact relation is a therapist.
+    #    If so, they will be saved as so.
+    
+    if contactRelation1 == "Therapist":
+        saveThep1 = input("Do you want to save contact 1 as a therapist? (Y/N): ")
+        
+        if saveThep1 == "Y":
+            print("Thank you. This contact will be saved as a therapist.")
+            
+        elif saveThep1 == "N":
+            print("This contact will not be saved as a therapist.")
+            
+        else:
+            input("Please try again. (Y/N): ")
+            
+    if contactRelation2 == "Therapist":
+        saveThep2 = input("Do you want to save contact 2 as a therapist? (Y/N): ")
+        
+        if saveThep2 == "Y":
+            print("Thank you. This contact will be saved as a therapist.")
+            
+        elif saveThep2 == "N":
+            print("This contact will not be saved as a therapist.")
+            
+        else:
+            input("Please try again. (Y/N): ")
+            
+    # This is where everything is written to the output file.
+            
+    outputFile.write(contactName1)
+    outputFile.write(", ")
+    outputFile.write(contactRelation1)
+    outputFile.write(", ")
+    outputFile.write(str(contactNumber1))
+    outputFile.write(",")
+    outputFile.write(contactName2)
+    outputFile.write(", ")
+    outputFile.write(contactRelation2)
+    outputFile.write(", ")
+    outputFile.write(str(contactNumber2))
+    outputFile.write("\n")
