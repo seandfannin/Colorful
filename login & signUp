@@ -1,0 +1,119 @@
+def signUp():
+    
+    # This is the output file, where everything entered by the user
+    #    will be written. For testing purposes, the output file
+    #    is named "out.txt", but should most likely be named
+    #    "log.txt".
+    
+    outputFileName = "out.txt"
+    outputFile = open(outputFileName, "w", encoding="utf-8")
+    
+    # This is the username input
+    
+    userName = input("Username: ")
+    
+    # This is the initial passcode input for the user.
+    #    The user has to input four digits for their account.
+    
+    passcode = int(input("Passcode: "))
+    stringPasscode = str(passcode)
+    length = len(stringPasscode)
+    
+    
+    # If the length of the passcode is not four digits,
+    #    the user will have to keep inputting a passcode
+    #    until they have four digits and only four digits.
+    
+    while length < 4 or length > 4:
+        print("The passcode must be four digits.")
+        passcode = int(input("Passcode: "))
+        stringPasscode = str(passcode)
+        length = len(stringPasscode)
+    
+    # This is the email input for the user.
+    #    The user must also confirm the email.
+    
+    email = str(input("Email: "))
+    confirmEmail = str(input("Confirm Email: "))
+    
+    for character in email and confirmEmail:
+        countAt = email.count('@')
+        countDot = email.count('.')
+        
+    while countAt == 0:
+        print("Invalid email address.")
+        email = input("Email: ")
+        confirmEmail = input("Confirm Email: ")
+        break
+        
+    while countDot == 0:
+        print("Invalid email address.")
+        email = input("Email: ")
+        confirmEmail = input("Confirm Email: ")
+        break
+    
+    while countAt > 1:
+        print("Invalid email address.")
+        email = input("Email: ")
+        confirmEmail = input("Confirm Email: ")
+        break
+    
+    while countDot > 1:
+        print("Invalid email address.")
+        email = input("Email: ")
+        confirmEmail = input("Confirm Email: ")
+        break
+    
+    # If the email and confirmEmail do not match,
+    #    this loop will run until they do match.
+    
+    while email != confirmEmail:
+        print("These emails do not match.")
+        confirmEmail = input("Confirm Email: ")
+        
+    contactInput = contacts()
+
+    # This is where the output file will actually
+    #    record what the user inputs and saves a new file.
+    
+    outputFile.write(userName)
+    outputFile.write(", ")
+    outputFile.write(str(passcode))
+    outputFile.write(", ")
+    outputFile.write(confirmEmail)
+    outputFile.write("\n")
+
+    # This is the login function
+    #    This is the alternative to the signUp, but will be connected via
+    #    user profiles saved.
+
+def login():
+    
+    # This is the actual passcode login function
+    #    For good measure, I decided to ask for the username
+    #    as well, so that way the file reader can check
+    #    for matching information.
+    
+    inputFileName = "out.txt"
+    inputFile = open(inputFileName, "r", encoding="utf-8")
+    
+    userName = input("Username: ")
+    passcode = int(input("Passcode: "))
+        
+    for line in inputFile:
+        lineItems = line.split(",")
+        confirmUser = lineItems[0]
+        confirmPass = lineItems[1]
+        
+        while userName != confirmUser:
+            print("Invalid username.")
+            userName = input("Username: ")
+            
+        while passcode != confirmPass:
+            print("Invalid passcode.")
+            passcode = int(input("Passcode: "))
+            
+    print("Login Successful.")
+        
+    outputFile.close()
+    inputFile.close()
