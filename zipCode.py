@@ -1,8 +1,14 @@
 #Hannah Lawson
-#In progress
+#In progress- can add more cities when needed
 #10/12/2021
 
+#uszipcode is a Python library
+#using Zipcode, SearchEngine, SimpleZipcode
+
 from uszipcode import Zipcode, SearchEngine, SimpleZipcode
+
+#function takes a zipcode from user
+#puts that into search.by_zipcode
 
 def zipCode():
     userZip= input("Enter your zipcode: ")
@@ -10,6 +16,10 @@ def zipCode():
     zipcode = search.by_zipcode(userZip)
     city= zipcode.major_city
     #print(city)
+    
+#prints out name and phone number
+# for local therapist
+#only a few places, can add more later
     
     if city== "Daniels" or city== "Beckley":
         print("Laurel Mountain Psychological, Inc  \n (304)-894-8930")
