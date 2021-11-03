@@ -1,2 +1,2 @@
 # Colorful
-Software Enginreering Team Yee Haw y'all
+Software Engineering Team Yee Haw y'all
