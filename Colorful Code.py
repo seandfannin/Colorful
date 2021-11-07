@@ -47,6 +47,8 @@ def invalidInput():
 #Homepage
 def homePage():
     print("WELCOME TO COLORFUL!")
+    print(compliment)
+    print(compChall)
     print("Where would you like to go?\n")
     print("1 for a list of hotlines.")
     print("2 for an inspriational quote.")
@@ -449,3 +451,37 @@ def compliments():
   #End of compliement
 
   #Daily Challenge
+def challenge():
+    #Present at least 10 healthy challenges for the user to try
+    #The user can't change this
+
+    #Start fo code:
+        #Picks a random inspirational quote numbered 1-10
+    compChall = random.randint(1,10)
+
+    #Challenge options
+    if compChall == 1:
+        print("Take a 10 minute walk!\n")
+    elif compChall == 2:
+        print("Drink 8 bottles of water today!\n")
+    elif compChall == 3:
+        print("Read a chapter of a book!\n")
+    elif compChall == 4:
+        print("Take some deep breaths!\n")
+    elif compChall == 5:
+        print("Take a cat nap!\n")
+    elif compChall == 6:
+        print("Color a picture!\n")
+    elif compChall == 7:
+        print("Write down a list of things you are greatful for!\n")
+    elif compChall == 8:
+        print("Take a bubble bath!\n")
+    elif compChall == 9:
+        print("Do some yoga!\n")
+    elif compChall == 10:
+        print("Look in the mirror and say,'I am valuable and worthy!'\n")
+    else:
+        return "error"
+
+    #Printing random challenge
+    #print(compChall)
