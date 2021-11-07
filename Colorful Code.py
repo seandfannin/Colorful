@@ -1,7 +1,3 @@
-#Brianna Riley
-#In Progress, Finished
-#10/21/2021
-
 import random #random generator
 from PIL import Image #Image opener
 
@@ -35,11 +31,11 @@ def rewards():
             elif choice == "Y":
                 homePage()
 
-#Getting choice of user, not integer, Finished
+#Getting choice of user, not integer
 def getYN():
     return input("Enter your choice: ").upper()
 
-#Getting choice of user, Finished
+#Getting choice of user
 def getChoice():
     return int(input("Enter your choice: "))
 
@@ -48,7 +44,7 @@ def invalidInput():
     print("That is not a valid input. Returning to the Homepage!\n")
     homePage()
 
-#Temperary Homepage
+#Homepage
 def homePage():
     print("WELCOME TO COLORFUL!")
     print("Where would you like to go?\n")
@@ -71,8 +67,9 @@ def homePage():
         memeJoke()
     else:
         invalidInput()
+#End of HomePage
 
-#Hotline, Finished
+#Hotline
 def hotline():
     #Hotline numbers can be accessed through the homepage. If the user is in need of a hotline number,
     #then the user can click on the hotline box
@@ -100,8 +97,9 @@ def hotline():
         homePage()
     else:
         invalidInput()
+#End of Hotlines
 
-#Quotes, Finished
+#Quotes
 def quotes():
     #Quotes is one of the avaliable rewards. If the user wishes to have an inspirational quote to brighten their day,
     #The the software will provide a random quote from a list with at least 10 different quotes.
@@ -147,8 +145,9 @@ def quotes():
         quotes()
     else:
         invalidInput()
+#End of Quotes
 
-#Videos, Finished
+#Videos
 def videos():
     #Videos is one of the avaliable rewards. If the user wishes to have a funny
         #video to brighten their day,
@@ -207,8 +206,9 @@ def videos():
         videos()
     else:
         invalidInput()
+#End of Videos
 
-#Songs, Finished
+#Songs
 def songs():
     #Songs is one of the avaliable rewards. If the user wishes to have an uplighting song to brighten their day,
     #The software will provide a random song from a list with at least 10 different songs.
@@ -303,8 +303,9 @@ def songs():
         songs()
     else:
         invalidInput()
+#End of Songs
         
-#Memes & Jokes, Finished
+#Memes & Jokes
 def memeJoke():
     #memeJoke is one of the avaliable rewards. If the user wishes to have a funny joke or meme to make them smile.
     #The software will provide a random meme or joke from a list with at least 10 different jokes and memes.
@@ -389,5 +390,62 @@ def memeJoke():
     elif choice == 2:
         memeJoke()
     else:
-        invalidInput()
+        invalidInput()   
+ #End of MemeJoke
+
+#Beginning of Daily Compliment    
+    # This is the compliments randomizer.
+    #    This randomizer gives a random compliment.
+    #    This is a two-part randomizer, based loosely on the mind of
+    #    when we would program dice randomizers.
     
+def complimentRandomizer():
+    # This is just the randomizer. Nothing too special, moving along.
+    return random.randint(1,10)
+
+def compliments():
+    # This is where the magic happens.
+    #    The complimentRandomizer function gets called here.
+    
+    compliment = complimentRandomizer()
+    print("Daily Compliment: ")
+    
+    # Then, based on the computer randomization,
+    #    the program prints a different compliment!
+    
+    if compliment == 1:
+        print("You look stellar today!")
+        
+    elif compliment == 2:
+        print("You're incredibly smart, you can do anything you put your mind to!")
+        
+    elif compliment == 3:
+        print("You're so kind!")
+        
+    elif compliment == 4:
+        print("You light up the room!")
+        
+    elif compliment == 5:
+        print("You're someone's reason to smile!")
+        
+    elif compliment == 6:
+        print("You're an inspiration!")
+        
+    elif compliment == 7:
+        print("You're making a difference!")
+        
+    elif compliment == 8:
+        print("You are enough!")
+        
+    elif compliment == 9:
+        print("You're something really special!")
+        
+    elif compliment == 10:
+        print("You are perfect just the way you are!")
+      
+    # Fail-safe, just in case.
+    else:
+        print("Error")
+  #End of compliement
+
+  #Daily Challenge
