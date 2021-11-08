@@ -25,10 +25,16 @@ def zipCode():
         print("Laurel Mountain Psychological, Inc  \n (304)-894-8930")
     elif city== "Princeton" or city=="Athens":
         print("The Gibson Counseling Center \n (304)-487-9996")
+    elif city== "Martinsburg" or city=="Shepherdstown":
+        print("Psychological Consulting Inc \n (304)-263-9095")        
     elif city== "Bluefield":
         print("Brain Matters Therapy \n (276)-970-9747")
+    elif city== "Wheeling" or city=="Weirton":
+        print("Muir Robin \n (304)-233-1200")        
     elif city== "Charleston" or city== "Saint Albans":
         print("KPCC Counseling \n (304)-346-9689")
+    elif city== "Morgantown":
+        print("Fremouw-Sigley Psychological \n (304)-598-2300")        
     elif city== "Tazewell" or city== "Cedar Bluff":
         print("Carilion Clinic \n (276)-988-8765")
     elif city== "Bastian" or city== "Pearisburg":
