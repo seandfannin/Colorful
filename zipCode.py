@@ -1,17 +1,19 @@
 #Hannah Lawson
-#In progress- can add more cities when needed
+#In progress
 #10/12/2021
 
-#uszipcode is a Python library
-#using Zipcode, SearchEngine, SimpleZipcode
-
 from uszipcode import Zipcode, SearchEngine, SimpleZipcode
+from easygui import *
 
-#function takes a zipcode from user
-#puts that into search.by_zipcode
+
 
 def zipCode():
-    userZip= input("Enter your zipcode: ")
+    text = "Enter zipcode"
+    title = "Zipcode"
+    d_text = ""
+
+    userZip = enterbox(text, title, d_text)
+   # userZip= input("Enter your zipcode: ")
     search = SearchEngine()
     zipcode = search.by_zipcode(userZip)
     city= zipcode.major_city
