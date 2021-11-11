@@ -1,5 +1,6 @@
 import random #random generator
 from PIL import Image #Image opener
+import easygui import * #GUI
 
 #Rewards, Finished
 def rewards():
@@ -416,41 +417,44 @@ def compliments():
     #    the program prints a different compliment!
     
     if compliment == 1:
-        print("You look stellar today!")
+        message = ("You look stellar today!")
         
     elif compliment == 2:
-        print("You're incredibly smart, you can do anything you put your mind to!")
+        message = ("You're incredibly smart, you can do anything you put your mind to!")
         
     elif compliment == 3:
-        print("You're so kind!")
+        message = ("You're so kind!")
         
     elif compliment == 4:
-        print("You light up the room!")
+        message = ("You light up the room!")
         
     elif compliment == 5:
-        print("You're someone's reason to smile!")
+        message = ("You're someone's reason to smile!")
         
     elif compliment == 6:
-        print("You're an inspiration!")
+        message = ("You're an inspiration!")
         
     elif compliment == 7:
-        print("You're making a difference!")
+        message = ("You're making a difference!")
         
     elif compliment == 8:
-        print("You are enough!")
+        message = ("You are enough!")
         
     elif compliment == 9:
-        print("You're something really special!")
+        message = ("You're something really special!")
         
     elif compliment == 10:
-        print("You are perfect just the way you are!")
+        message = ("You are perfect just the way you are!")
       
     # Fail-safe, just in case.
     else:
-        print("Error")
+        message = ("Error")
+        
+    #Outputs the daily compliment
+    output = msgbox(message)
   #End of compliement
 
-  #Daily Challenge
+#Daily Challenege
 def challenge():
     #Present at least 10 healthy challenges for the user to try
     #The user can't change this
@@ -458,34 +462,37 @@ def challenge():
     #Start fo code:
         #Picks a random inspirational quote numbered 1-10
     compChall = random.randint(1,10)
-
+    
     #Challenge options
     if compChall == 1:
-        print("Take a 10 minute walk!\n")
+        message = ("Take a 10 minute walk!\n")
     elif compChall == 2:
-        print("Drink 8 bottles of water today!\n")
+        message = ("Drink 8 bottles of water today!\n")
     elif compChall == 3:
-        print("Read a chapter of a book!\n")
+        message = ("Read a chapter of a book!\n")
     elif compChall == 4:
-        print("Take some deep breaths!\n")
+        message = ("Take some deep breaths!\n")
     elif compChall == 5:
-        print("Take a cat nap!\n")
+        message = ("Take a cat nap!\n")
     elif compChall == 6:
-        print("Color a picture!\n")
+        message = ("Color a picture!\n")
     elif compChall == 7:
-        print("Write down a list of things you are greatful for!\n")
+        message = ("Write down a list of things you are greatful for!\n")
     elif compChall == 8:
-        print("Take a bubble bath!\n")
+        message = ("Take a bubble bath!\n")
     elif compChall == 9:
-        print("Do some yoga!\n")
+        message = ("Do some yoga!\n")
     elif compChall == 10:
-        print("Look in the mirror and say,'I am valuable and worthy!'\n")
+        message = ("Look in the mirror and say,'I am valuable and worthy!'\n")
     else:
         return "error"
-
+    
     #Printing random challenge
     #print(compChall)
-
+    
+    #Outputs the daily challenge
+    output = msgbox(message)
+    
     # Login function; finished-ish
 def login():
     
