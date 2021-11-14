@@ -449,17 +449,3 @@ def challenge():
     
     #Outputs the daily challenge
     output = msgbox(message)
-    
-    # Login function; finished-ish
-def login():
-    
-    # This is the actual passcode login function
-    #    For good measure, I decided to ask for the username
-    #    as well, so that way the file reader can check
-    #    for matching information.
-    
-    inputFileName = "out.txt"
-    inputFile = open(inputFileName, "r", encoding="utf-8")
-    
-    userName = input("Username: ")
-    passcode = int(input("Passcode: "))
