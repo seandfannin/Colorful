@@ -1,3 +1,5 @@
+from easygui import *
+
 class UserProfile:
     def __init__(self, fileName):
         self.fileName = fileName #file name should be
@@ -44,3 +46,32 @@ class UserProfile:
             
         profile.close()
         copy.close()
+def start():
+    choices = ["Create profile", "Log in"]
+    msg = "Welcome to Colorful!"
+    reply = buttonbox(msg,"Colorful",choices)
+    if(reply == "Create profile"):
+        msg = "Enter your personal information"
+        title = "User Profile"
+        fieldNames = ["name", "birthday", "userName", "password", "address","email", "Therapist","Therapist Email", "emContactName"]
+        fieldValues = []  # we start with blanks for the values
+        fieldValues = multenterbox(msg,title, fieldNames)
+        profile = UserProfile(fieldValues[0]+".txt")
+        profile.create(fieldValues[0],fieldValues[1],fieldValues[2],fieldValues[3],fieldValues[4],fieldValues[5],fieldValues[6],fieldValues[7],fieldValues[8])
+        #Need to get the userprofile creation to work correctly.
+        
+def log(userProfile):
+    message = ""
+    title = "How do you feel?"
+    output = textbox(message,title)
+    userProfile.append(output)
+    
+    
+
+start()
+        
+    
+    
+        
+        
+
