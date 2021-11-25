@@ -53,18 +53,16 @@ def start():
     if(reply == "Create profile"):
         msg = "Enter your personal information"
         title = "User Profile"
-        fieldNames = ["name", "birthday", "userName", "password", "address","email", "Therapist","Therapist Email", "emContactName"]
+        fieldNames = ["name", "birthday", "userName", "password", "address","email", "Therapist","Therapist Email", "emContactName","EmContactNumber"]
         fieldValues = []  # we start with blanks for the values
         fieldValues = multenterbox(msg,title, fieldNames)
         profile = UserProfile(fieldValues[0]+".txt")
-        profile.create(fieldValues[0],fieldValues[1],fieldValues[2],fieldValues[3],fieldValues[4],fieldValues[5],fieldValues[6],fieldValues[7],fieldValues[8])
+        profile.create(fieldValues[0],fieldValues[1],fieldValues[2],fieldValues[3],fieldValues[4],fieldValues[5],fieldValues[6],fieldValues[7],fieldValues[8],fieldValues[9])
+        message = ""
+        title = "How do you feel?"
+        output = textbox(message,title)
+        profile.log(output)
         #Need to get the userprofile creation to work correctly.
-        
-def log(userProfile):
-    message = ""
-    title = "How do you feel?"
-    output = textbox(message,title)
-    userProfile.append(output)
     
     
 
