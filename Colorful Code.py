@@ -514,3 +514,23 @@ def start():
         title = "How do you feel?"
         output = textbox(message,title)
         profile.log(output)
+
+#Trigger Search
+items=['hurt','burden','kill','hate living','no one loves me','lonely','knife',
+'gun','rope','hanging','unimportant','panic','dead','anxious','killed','scared',
+'overwhelmed','tense','pain','abandon','control','rejected','betrayed',
+'disappointment','insecure'] #words you are looking for
+import re
+file=open('words.txt','r')# May change txt file
+content=file.read()
+#save the read output so the reading always starts from begining
+for i in items:
+                 lis=re.findall(i,content)
+                 if len(lis)==0:
+                       print('Not Found')
+                 elif len(lis)==1:
+                       print('Found Once')
+                 elif len(lis)==2:
+                       print('Found Twice')
+                 else:
+                       print('Found',len(lis),'times')
