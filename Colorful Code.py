@@ -1,6 +1,7 @@
 import random #random generator
+import re
 from PIL import Image #Image opener
-import easygui import * #GUI
+from easygui import * #GUI
 
 #Rewards, Finished
 def rewards():
@@ -33,7 +34,9 @@ def invalidInput():
 #Homepage
 def homePage():  
     #Message box
-    msg = (("WELCOME TO COLORFUL!\n") + ("Where would you like to go?") + (compliment) + (compChall))
+    compliments()
+    challenge()
+    msg = (("WELCOME TO COLORFUL!\n") + ("Where would you like to go?"))
     title = "Homepage"
     choices = ["Hotlines", "Quotes", "Videos", "Songs", "Memes", "Jokes"]
     choice = buttonbox(msg, title, choices)
@@ -477,7 +480,7 @@ class UserProfile:
         profile.write("\n")
         profile.close()
         
-    def  Log(self, entry,date):
+    def Log(self, entry,date):
         profile = open(self.fileName, "a")
         profile.write(date + "\n")
         profile.write(entry)
@@ -498,8 +501,9 @@ class UserProfile:
             
         profile.close()
         copy.close()
+        
 def start():
-    choices = ["Create profile", "Log in"]
+    choices = ["Create profile", "Login"]
     msg = "Welcome to Colorful!"
     reply = buttonbox(msg,"Colorful",choices)
     if(reply == "Create profile"):
@@ -510,27 +514,121 @@ def start():
         fieldValues = multenterbox(msg,title, fieldNames)
         profile = UserProfile(fieldValues[0]+".txt")
         profile.create(fieldValues[0],fieldValues[1],fieldValues[2],fieldValues[3],fieldValues[4],fieldValues[5],fieldValues[6],fieldValues[7],fieldValues[8],fieldValues[9])
+        happinessRate()
         message = ""
         title = "How do you feel?"
         output = textbox(message,title)
-        profile.log(output)
+        profile.Log(output)
+        
+        #Trigger Search
+        items=['hurt','burden','kill','hate living','no one loves me','lonely','knife',
+        'gun','rope','hanging','unimportant','panic','dead','anxious','killed','scared',
+        'overwhelmed','tense','pain','abandon','control','rejected','betrayed',
+        'disappointment','insecure'] #words you are looking for
 
-#Trigger Search
-items=['hurt','burden','kill','hate living','no one loves me','lonely','knife',
-'gun','rope','hanging','unimportant','panic','dead','anxious','killed','scared',
-'overwhelmed','tense','pain','abandon','control','rejected','betrayed',
-'disappointment','insecure'] #words you are looking for
-import re
-file=open('words.txt','r')# May change txt file
-content=file.read()
-#save the read output so the reading always starts from begining
-for i in items:
-                 lis=re.findall(i,content)
-                 if len(lis)==0:
-                       print('Not Found')
-                 elif len(lis)==1:
-                       print('Found Once')
-                 elif len(lis)==2:
-                       print('Found Twice')
-                 else:
-                       print('Found',len(lis),'times')
+        file=open(fieldValues[0] + '.txt','r')# May change txt file
+        content=file.read()
+        #save the read output so the reading always starts from begining
+        for i in items:
+            lis=re.findall(i,content)
+            if len(lis)==0:
+                print('Not Found')
+            elif len(lis)==1:
+                print('Found Once')
+            elif len(lis)==2:
+                print('Found Twice')
+            else:
+                print('Found',len(lis),'times')
+                
+    elif(reply == "Login"):
+        title2 = "Login"
+        text = "Username"
+        text2 = "Passcode"
+        d_text = ""
+    
+        username = enterbox(text, title2, d_text)
+        passcode = enterbox(text2,title2,d_text)
+        length = len(passcode)
+    
+        while length < 4 or length > 4:
+            title = "Login"
+            msg2 = "Invalid passcode. Please try again."
+            passcode = enterbox(text2,title2,d_text)
+            length = len(passcode)
+    
+    message2 = "Login Successful"
+    outputSuccess = msgbox(message2, title2)
+    
+    choices2 = ["Yes","No"]
+    msg3 = "Would you like to make a log?"
+    reply2 = buttonbox(msg3,"Colorful",choices2)
+    if (reply2 == "Yes"):
+        profile = UserProfile(username + ".txt")
+        happinessRate()
+        message3 = ""
+        title = "How do you feel?"
+        output2 = textbox(message3,title)
+        profile.Log(output2)
+        rewards()
+        
+    elif (reply2 == "No"):
+        homePage()
+
+def happinessRate():
+    
+    # This is the output file, where it will record the user's input.
+    #    Again, for testing purposes the name is still "out.txt"
+    
+    outputFileName = "out.txt"
+    outputFile = open(outputFileName, "w", encoding="utf-8")
+    
+    # This is where the user will input their mood rating.
+    
+    msg = (("Please rate your happiness on a scale from one to ten!") + (" One is the lowest, and ten is the highest."))
+    title = "Happiness Rating"
+    choices = ["1","2","3","4","5","6","7","8","9","10"]
+    choice = buttonbox(msg,title,choices)
+    
+    if choice == "1":
+        outputFile.write("Today's Rating: ")
+        outputFile.write(choice)
+        
+    elif choice == "2":
+        outputFile.write("Today's Rating: ")
+        outputFile.write(choice)
+        
+    elif choice == "3":
+        outputFile.write("Today's Rating: ")
+        outputFile.write(choice)
+        
+    elif choice == "4":
+        outputFile.write("Today's Rating: ")
+        outputFile.write(choice)
+        
+    elif choice == "5":
+        outputFile.write("Today's Rating: ")
+        outputFile.write(choice)
+        
+    elif choice == "6":
+        outputFile.write("Today's Rating: ")
+        outputFile.write(choice)
+        
+    elif choice == "7":
+        outputFile.write("Today's Rating: ")
+        outputFile.write(choice)
+        
+    elif choice == "8":
+        outputFile.write("Today's Rating: ")
+        outputFile.write(choice)
+        
+    elif choice == "9":
+        outputFile.write("Today's Rating: ")
+        outputFile.write(choice)
+        
+    elif choice == "10":
+        outputFile.write("Today's Rating: ")
+        outputFile.write(choice)
+    
+    outputFile.close()
+
+start()
