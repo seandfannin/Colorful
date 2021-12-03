@@ -118,7 +118,7 @@ def quotes():
     
     #Message box
     #User has option to go back to the homepage or another quote
-    title = "Qoutes"
+    title = "Quotes"
     choices = ["Quotes", "Homepage"]
     choice = buttonbox(message, title, choices)
     if choice == "Quotes":
