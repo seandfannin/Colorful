@@ -38,7 +38,7 @@ def homePage():
     challenge()
     msg = (("WELCOME TO COLORFUL!\n") + ("Where would you like to go?"))
     title = "Homepage"
-    choices = ["Hotlines", "Quotes", "Videos", "Songs", "Memes", "Jokes"]
+    choices = ["Hotlines", "Quotes", "Videos", "Songs", "Memes", "Jokes", "Therapist Search"]
     choice = buttonbox(msg, title, choices)
     if choice == "Hotlines":
         hotline()
@@ -52,6 +52,8 @@ def homePage():
         memes()
     elif choice == "Jokes":
         jokes()
+    elif choice == "Therapist Search":
+        zipCode()
     else:
         return "error"
 #End of HomePage
