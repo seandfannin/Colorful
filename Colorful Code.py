@@ -1,3 +1,8 @@
+#TEAM YEEHAW Y'ALL
+#YEE
+#HAW
+#COWBOY CODING
+
 import random #random generator
 import re
 #from PIL import Image #Image opener
